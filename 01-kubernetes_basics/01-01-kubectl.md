@@ -28,7 +28,7 @@ wobei befehl, TYP, NAME und flags Folgendes sein können:
 
 * `flags`: Gibt optionale Flags an. Sie können beispielsweise die Flags `-n` oder `--namespace` verwenden, um in einem anderen Namespace zu handeln.
 
-Jetzt gehts weiter in der [Übung 1.2](01-02-configmaps_und_secrets.md). Falls ihr einmal feststeckt, schaut euch die Links hier unten an, oder stellt einfach eine Frage.
+Jetzt gehts weiter in der [Übung 1.2](./01-02-pods_und_services.md). Falls ihr einmal feststeckt, schaut euch die Links hier unten an, oder stellt einfach eine Frage.
 
 ## Dokumentation und Tips
 

@@ -23,9 +23,9 @@
 
 ## Ablauf
 
-1. Grundlagen für `kubectl` ([01-01-pods_und_services.md](./01-01-kubectl.md))
-1. Applikationen starten mit Pods und Services ([01-02-pods_und_services.md](./01-02-pods_und_services.md))
-2. Konfiguration mit ConfigMaps und Secrets
-3. Skalieren mit Deployments
-4. Dauerhafte Datenablage mit PersistentVolumes
-5. 
+1. Grundlagen für `kubectl` ([01-01-kubectl.md](./01-01-kubectl.md))
+2. Applikationen starten mit Pods und Services ([01-02-pods_und_services.md](./01-02-pods_und_services.md))
+3. Konfiguration mit ConfigMaps und Secrets
+4. Skalieren mit Deployments
+5. Dauerhafte Datenablage mit PersistentVolumes
+6. 
