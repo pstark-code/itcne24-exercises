@@ -27,10 +27,10 @@ Der Port links vom Doppelpunkt ist lokal, der Port rechts davon ist am Pod. Das 
 
 Macht euch etwas mit der einfachen Applikation vertraut. Der Pod-Name wird angezeigt. Um weitere Infos anzuzeigen gibt es noch ein paar API-Endpunkte. Eine vollständige Liste findet ihr [auf der Podinfo-Webseite](https://github.com/stefanprodan/podinfo). Wir schauen uns hier einen speziell nützlichen an um Umgebungsvariablen anzuzeigen: [/env](http://localhost:8000/env)
 
-> [!TIP] Tip
+> [!TIP]  Tip
 > Unter der Variable `HOSTNAME` ist der Name vom Pod zu finden.
 
-> [!NOTE] Anmerkung
+> [!NOTE]  Anmerkung
 > `kubectl port-forward` ist ein debugging-Werkzeug und eignet sich nicht für den produktiven Betrieb.
 
 Probiert noch weitere API Endpunkte aus. Meldet interessante Resultate im gemeinsamen Whiteboard
@@ -43,7 +43,7 @@ Vorschläge:
 - GET /headers
 - GET /configs
 
-> [!TIP] Hint
+> [!TIP]  Hint
 > Wenn ihr die gleiche URL wie im Browser (`http://localhost:8000/`) stattdessen per `curl` aufruft kommt etwas anderes zurück. Schreibt es ins Whiteboard.
 
 ## Resourcen inspizieren mit `kubectl describe` und `k9s`

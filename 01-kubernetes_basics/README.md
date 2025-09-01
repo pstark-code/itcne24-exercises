@@ -18,7 +18,7 @@
   - [ ] Löschen (`delete`)
 
 - Ich weiss wie ich mehrere Kubernetes Resourcen verwalten kann mit Labels
-- Ich kenne die 
+
 
 
 ## Ablauf
@@ -28,4 +28,4 @@
 3. Konfiguration mit ConfigMaps und Secrets
 4. Skalieren mit Deployments
 5. Dauerhafte Datenablage mit PersistentVolumes
-6. 
+
