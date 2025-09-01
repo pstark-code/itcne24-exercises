@@ -56,10 +56,8 @@ kubectl describe TYPE NAME
 
 Was könnt ihr hier sehen? Es ist wahrscheinlich, dass euch für vieles noch der Kontext fehlt. Überlegt euch trotzdem was die verschiedenen Werte bedeuten könnten. Wir besprechen das gleich im Plenum
 
+<!-- 
 ## Eine Applikation Cluster-weit zugänglich machen mit `kubectl expose`
-
-
-
 
 Um jetzt das Load-Balancing von unserem Service zu sehen, starten wir einen temporären Pod innerhalb von unserem Namespace:
 
@@ -70,7 +68,7 @@ kubectl run my-debug-shell --rm -i -t --image=docker.io/nicolaka/netshoot
 Das Container-Image `docker.io/nicolaka/netshoot` ist ein praktisches Netzwerk-Debugging-Image, das viele Werkzeuge mitbringt, darunter `ping` und `curl`. 
 
 > [!NOTE] Anmerkung
-> Dank der `--rm` Flag wird dieser Pod gelöscht sobald wir das Terminal schliessen. Und mit den `-i` und `-t` Flags wird der Pod im Vordergrund gestartet, damit wir damit arbeiten können.
+> Dank der `--rm` Flag wird dieser Pod gelöscht sobald wir das Terminal schliessen. Und mit den `-i` und `-t` Flags wird der Pod im Vordergrund gestartet, damit wir damit arbeiten können. -->
 
 
 ## Dokumentation und Tips
