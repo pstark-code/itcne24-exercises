@@ -56,8 +56,45 @@ kubectl describe TYPE NAME
 
 Was könnt ihr hier sehen? Es ist wahrscheinlich, dass euch für vieles noch der Kontext fehlt. Überlegt euch trotzdem was die verschiedenen Werte bedeuten könnten. Wir besprechen das gleich im Plenum
 
-<!-- 
+
 ## Eine Applikation Cluster-weit zugänglich machen mit `kubectl expose`
+
+
+> [!NOTE]
+> Ich werde euch bereits bekannte Befehle nicht jedes Mal wiederholen. 
+> Ausser wenn es neue Optionen oder neue Konzepte gibt.
+
+
+Ein Service ist ein Kubernetes Konzept, womit wir einen oder mehrere Pods dem Rest des Clusters oder sogar ausserhalb des Clusters verfügbar machen können.
+
+### Ein Service für einen einzelnen Pod
+
+Vorbereitung: 
+
+- [ ] Erstelle einen Pod namens "podinfo-manuell", mit dem Podinfo Container-Image. (Siehe vergangene Übungen.)
+
+Einen Service erstellen:
+
+```shell
+kubectl expose pod/mypod --port=<SERVICE-PORT> --target-port=<ZIEL-PORT>
+```
+
+> [!NOTE]
+> Wenn in Code-Beispielen ein Begriff in `<GROSSBUCHSTABEN>` und mit `< >` umgeben ist, bedeutet das, dass 
+> die Werte abhängig von eurem Kontext ist, und ihr diese Werte selber einsetzen müsst.
+
+
+> [!TIP]
+> Wenn ihr euch wundert, wie kubectl expose aufgerufen wird, 
+> könnt ihr jederzeit `kubectl expose --help` ausführen. 
+> Das funktioniert mit den meisten kubectl Subkommandos.
+>
+> Die Ausgabe kann recht lang sein. Scrollt unbedingt ganz 
+> nach oben, um die Beispiele zu sehen!
+
+Inspiziert diesen Service mit `kubectl describe`. Ihr könnt nachschauen welche Services ihr in eurem Namespace habt mit `kubectl get service`
+
+<!-- 
 
 Um jetzt das Load-Balancing von unserem Service zu sehen, starten wir einen temporären Pod innerhalb von unserem Namespace:
 
