@@ -71,7 +71,7 @@ Ein Service ist ein Kubernetes Konzept, womit wir einen oder mehrere Pods dem Re
 
 Vorbereitung: 
 
-- [ ] Erstelle einen Pod namens "podinfo-manuell", mit dem Podinfo Container-Image. (Siehe vergangene Übungen.)
+- [ ] Erstelle einen Pod namens "mypod", mit dem Podinfo Container-Image. (Siehe vergangene Übungen.)
 
 Einen Service erstellen:
 
@@ -93,6 +93,43 @@ kubectl expose pod/mypod --port=<SERVICE-PORT> --target-port=<ZIEL-PORT>
 > nach oben, um die Beispiele zu sehen!
 
 Inspiziert diesen Service mit `kubectl describe`. Ihr könnt nachschauen welche Services ihr in eurem Namespace habt mit `kubectl get service`
+
+
+## Einschub zu `port-forward` und Services
+
+Ein toller Aspekt von `kubectl port-forward` ist, dass neben Pods auch andere Resourcen angegeben werden können, unter Anderem Services und Deployments.
+
+Probiert das jetzt aus, mit `kubectl port-forward` auf den Service zu zeigen. Und dann schaut ihr die Ausgabe genau an. Was fällt euch auf? Welchen `target-port` müsst ihr angeben?
+
+Das führt zu einer unglücklichen Eigenheit von `kubectl port-forward`. 
+
+Es können zwar services und deployments angegeben werden, aber alle port-forwards werden 
+trotzdem bei einem Pod münden.
+
+Der Grund ist, weil beim `kubectl port-forward` ursprünglich tatsächlich nur Pods angegeben werden konnten. 
+Die Entwickler konnten aber diese Funktionalität nicht grundlegend umschreiben, also haben sie
+sich darauf geeinigt, einfach den ersten Pod auszuwählen, der zu dem Service oder zum Deployment gehört, und
+sich dann damit zu verbinden. 
+
+`kubectl port-forward` eignet sich also nicht, um sich direkt mit dem Port von einem Service zu verbinden, und das Load-Balancing zu beobachten, das vorgenommen wird.
+
+Too long; didn't read: `kubectl port-forward` verbindet sich nur mit Pods. 
+
+
+## Mehrere Instanzen einer Applikation Starten mit Deployments
+
+Mehrere Pods werden von einem ReplicaSet verwaltet.
+
+Ein `ReplicaSet` wird von einem `Deployment` verwaltet. Ein Deployment kann mit dem Befehl `kubectl create deployment` erstellt werden. 
+
+**Aufgabe**:
+
+- Erstellt ein `deployment`
+  - mit dem Namen multi-podinfo
+  - mit dem Podinfo Image (`stefanprodan/podinfo:6.9.1`)
+  - mit 3 oder mehr Replikas
+- Erstellt einen Service mit `kubectl expose`, das auf das eben erstellte `deployment` zeigt
+
 
 <!-- 
 
