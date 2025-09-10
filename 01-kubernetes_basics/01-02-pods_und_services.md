@@ -131,7 +131,7 @@ Ein `ReplicaSet` wird von einem `Deployment` verwaltet. Ein Deployment kann mit 
 - Erstellt einen Service mit `kubectl expose`, das auf das eben erstellte `deployment` zeigt
 
 
-<!-- 
+### Folge-Aufgabe
 
 Um jetzt das Load-Balancing von unserem Service zu sehen, starten wir einen temporären Pod innerhalb von unserem Namespace:
 
@@ -142,7 +142,7 @@ kubectl run my-debug-shell --rm -i -t --image=docker.io/nicolaka/netshoot
 Das Container-Image `docker.io/nicolaka/netshoot` ist ein praktisches Netzwerk-Debugging-Image, das viele Werkzeuge mitbringt, darunter `ping` und `curl`. 
 
 > [!NOTE]
-> Dank der `--rm` Flag wird dieser Pod gelöscht sobald wir das Terminal schliessen. Und mit den `-i` und `-t` Flags wird der Pod im Vordergrund gestartet, damit wir damit arbeiten können. -->
+> Dank der `--rm` Flag wird dieser Pod gelöscht sobald wir das Terminal schliessen. Und mit den `-i` und `-t` Flags wird der Pod im Vordergrund gestartet, damit wir damit arbeiten können.
 
 
 ## Dokumentation und Tips
