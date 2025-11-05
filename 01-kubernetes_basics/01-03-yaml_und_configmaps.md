@@ -53,3 +53,30 @@ kubectl apply -f deployment-web-app.yaml
 - [JSON Schema für ConfigMaps](https://kubespec.dev/kubernetes/v1/ConfigMap)
 - [JSON Schema für Secrets](https://kubespec.dev/kubernetes/v1/Secret)
 
+## Minimales Beispiel eines Deployment mit einer Umgebungsvariable
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beispiel-nginx-deployment
+  namespace: philip-stark
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.19.5
+          env:
+            - name: TEST_VARIABLE
+              value: "test-wert"  # Achtung, das muss ein String sein. Das heisst, dass die Anführungszeichen wichtig sind, gerade wenn der Wert eine Zahl ist.
+```
